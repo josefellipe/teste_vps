@@ -9,6 +9,6 @@ def hello_world():
 
 if __name__ == "__main__":
     uvicorn.run(
-        host="0.0.0.0", 
+        host="89.117.33.83", 
         port=8000
         )
