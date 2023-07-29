@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def hello_world():
-    return {"message": "Hello, World!!!"}
+    return {"message": "Hello, World!!! Tamo Voando!"}
 
 if __name__ == "__main__":
     uvicorn.run(
