@@ -1,11 +1,19 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 import uvicorn
 
 app = FastAPI()
 
-@app.get("/")
-def hello_world():
-    return {"message": "Hello, World!!! Tamo Voando!"}
+@app.get("/", response_class=JSONResponse)
+async def custom_response():
+    content = {"message": "Tá dando certo"}
+    response = JSONResponse(
+        content=content, 
+        status_code=200, 
+        headers={"Access-Control-Allow-Origin": "*"}
+    )
+    return response
+
 
 if __name__ == "__main__":
     uvicorn.run(
